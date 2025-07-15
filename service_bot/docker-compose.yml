@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  bot:
+    build: .
+    environment:
+      - PYTHONPATH=/app
+    env_file:
+      - .env
+    volumes:
+      - .:/appvolume
+    restart: unless-stopped
