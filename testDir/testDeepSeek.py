@@ -1,6 +1,7 @@
 import requests
+import os
 
-API_KEY = "sk-fff346d940fb4cc4ae1a707600084249"
+API_KEY = os.environ.get("DEEPSEEK_API_KEY")
 API_URL = "https://api.deepseek.com/v1/chat/completions"
 
 headers = {
