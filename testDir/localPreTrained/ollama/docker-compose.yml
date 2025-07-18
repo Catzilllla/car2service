@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  ollama:
+    build: .
+    container_name: ollama
+    ports:
+      - "12000:11434"
+    volumes:
+      - ollama_data:/root/.ollama   # Хранение моделей вне контейнера
+    restart: unless-stopped
+    command: serve
+
+volumes:
+  ollama_data:
